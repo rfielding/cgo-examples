@@ -13,6 +13,7 @@ import (
 	"bytes"
 	"fmt"
 	"unsafe"
+	"log"
 )
 
 type User struct {
@@ -44,6 +45,9 @@ func main() {
 	b := 2
 	sum := int(C.sum(C.int(a), C.int(b)))
 	fmt.Print(sum, "\n\n")
+	if int(sum) != 3 {
+		log.Fatal("wrong value back from C!: %d", int(sum))
+	}
 
 	// Get string
 	fmt.Println("Get string")
