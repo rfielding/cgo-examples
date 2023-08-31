@@ -1,6 +1,6 @@
-FROM ubuntu:18.04
+FROM --platform=linux/amd64 ubuntu:23.04
 
-ARG GO=1.13.4
+ARG GO=1.20.6
 
 RUN apt update && apt upgrade -y
 RUN apt install -y wget make gcc
